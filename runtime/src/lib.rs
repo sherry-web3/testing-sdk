@@ -47,6 +47,7 @@ pub use sp_runtime::{Perbill, Permill};
 
 /// Import the template pallet.
 pub use pallet_template;
+pub use sherry_pallet;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -253,6 +254,13 @@ impl pallet_template::Config for Runtime {
 	type WeightInfo = pallet_template::weights::SubstrateWeight<Runtime>;
 }
 
+/// Configure the sherry-pallet in pallets/template.
+impl sherry_pallet::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+}
+
+
+
 // Create the runtime by composing the FRAME pallets that were previously configured.
 #[frame_support::runtime]
 mod runtime {
@@ -293,7 +301,10 @@ mod runtime {
 
 	// Include the custom logic from the pallet-template in the runtime.
 	#[runtime::pallet_index(7)]
-	pub type TemplateModule = pallet_template;
+	pub type TemplateModuleSherry = pallet_template;
+
+	#[runtime::pallet_index(8)]
+	pub type SherryModule = sherry_pallet;
 }
 
 /// The address format for describing accounts.
