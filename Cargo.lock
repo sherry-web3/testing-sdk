@@ -7841,6 +7841,16 @@ dependencies = [
 [[package]]
 name = "sherry-pallet"
 version = "0.1.0"
+dependencies = [
+ "frame-benchmarking",
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+]
 
 [[package]]
 name = "shlex"
@@ -8044,6 +8054,7 @@ dependencies = [
  "pallet-transaction-payment-rpc-runtime-api",
  "parity-scale-codec",
  "scale-info",
+ "sherry-pallet",
  "sp-api",
  "sp-block-builder",
  "sp-consensus-aura",
