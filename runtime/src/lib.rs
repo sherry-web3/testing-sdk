@@ -301,7 +301,7 @@ mod runtime {
 
 	// Include the custom logic from the pallet-template in the runtime.
 	#[runtime::pallet_index(7)]
-	pub type TemplateModuleSherry = pallet_template;
+	pub type TemplateModule = pallet_template;
 
 	#[runtime::pallet_index(8)]
 	pub type SherryModule = sherry_pallet;
@@ -355,6 +355,8 @@ mod benches {
 		[pallet_timestamp, Timestamp]
 		[pallet_sudo, Sudo]
 		[pallet_template, TemplateModule]
+		[sherry_pallet, SherryModule]
+
 	);
 }
 

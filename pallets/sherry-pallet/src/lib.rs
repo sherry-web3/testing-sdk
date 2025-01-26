@@ -1,8 +1,4 @@
-//! # Cherry Count Pallet
-//!
-//! A pallet that demonstrates simple storage and extrinsic functions in Substrate.
-//! This pallet maintains a single storage item `CherryCount` and provides extrinsics to add to its value
-//! and retrieve the current count.
+//! # Sherry Pallet
 //! 
 //! 
 //! 1. Pallet Config
@@ -12,6 +8,9 @@
 //! 5. Pallet Calls
 
 #![cfg_attr(not(feature = "std"), no_std)]
+
+#[cfg(feature = "runtime-benchmarks")]
+mod benchmarking;
 
 pub use pallet::*;
 
